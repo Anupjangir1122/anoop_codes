@@ -1,0 +1,32 @@
+def is_odd(number):
+    if number == 0:
+        return False
+    elif number == 1:
+        return True
+    else:
+        return is_even(number - 1)
+
+def is_even(number):
+    if number == 0:
+        return True
+    elif number == 1:
+        return False
+    else:
+        return is_odd(number - 1)
+
+def main():
+    try:
+        input_number = int(input("Enter an integer: "))
+        
+        if is_odd(input_number):
+            print(f"{input_number} is an odd number.")
+        elif is_even(input_number):
+            print(f"{input_number} is an even number.")
+        else:
+            print("Invalid input.")
+    
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
+
+if __name__ == "__main__":
+    main()
